@@ -3,7 +3,7 @@
 #include<string.h>
 
 void copy(char *input) {
-        char buffer[8];
+        char buffer[50];
         strcpy(buffer, input);
         printf(buffer);
         return;

