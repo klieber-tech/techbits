@@ -1,5 +1,11 @@
 Turning Off Countermeasures
+All the codes in a list
+$ sudo sysctl -w kernel.randomize_va_space=0
+$ gcc -fno-stack-protector example.c
+$ gcc -z execstack  -o test test.c
+$ sudo ln -sf /bin/zsh /bin/sh
 
+Codes with details
 Address Space Randomization. Ubuntu and several other Linux-based systems uses address space ran- domization to randomize the starting address of heap and stack. This makes guessing the exact addresses difficult; guessing addresses is one of the critical steps of buffer-overflow attacks. In this lab, we disable this feature using the following command:
 $ sudo sysctl -w kernel.randomize_va_space=0
 The StackGuard Protection Scheme. The GCC compiler implements a security mechanism called Stack- Guard to prevent buffer overflows. In the presence of this protection, buffer overflow attacks will not work. We can disable this protection during the compilation using the -fno-stack-protector option. For example, to compile a program example.c with StackGuard disabled, we can do the following:
